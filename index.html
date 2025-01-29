@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Votre description ici">
+    <meta name="author" content="Votre nom ici">
+    <title>Titre de la page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .header {
+            /* background: linear-gradient(-90deg, #bbbbbb, #23ffdd); */
+            background-color: #6699ff;
+            color: white;
+            padding: 20px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+            background-color: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.1);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #6699ff;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        /* for contact section */
+
+        .info-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            margin: 10px;
+            flex: 1 1 300px;
+            text-align: center;
+            align-items: center;
+        }
+
+        .info-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .info-item p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+                color: #222;
+            }
+
+            .header p {
+                font-size: 1.2rem;
+                color: #fff;
+            }
+
+            .header .numero-et-addresse {
+                color: #222;
+                font-size: 1rem;
+                margin: 0;
+                padding: 0;
+            }
+
+            .cta-button {
+                font-size: 1rem;
+                padding: 6px 12px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .info-item {
+                max-width: 100%;
+                margin-bottom: 15px;
+            }
+        }
+
+        /* styles for product */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .filter {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .filter button.active {
+            background: #0056b3;
+        }
+
+        .filter button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-bottom: 1.5px solid #1E90FF;
+            color: black;
+            background-color: #f8f9fa;
+        }
+
+        /* .filter button:hover {
+  background-color: #0056b3;
+} */
+
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .product {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .product-content {
+            padding: 0px;
+            text-align: center;
+        }
+
+        .product h3 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .product .price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #1E90FF;
+        }
+
+        .btn-show-more {
+            padding: 10px 20px;
+            background-color: #f8f9fa;
+            color: black;
+            border: 2px solid #1E90FF;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            font-size: 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        /* .btn-show-more:hover {
+  background-color: #218838;
+} */
+
+        /* Mobile responsive */
+        @media (max-width: 600px) {
+            .product-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* style for products */
+
+        .gallery {
+            display: flex;
+            gap: 10px;
+            padding: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .gallery img {
+            width: 30%;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .details {
+            padding: 15px 20px;
+        }
+
+        .description {
+            margin-bottom: 15px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .gallery img {
+                width: 100%;
+            }
+
+            .header {
+                font-size: 20px;
+            }
+
+            .description {
+                font-size: 14px;
+            }
+
+            .price {
+                font-size: 18px;
+            }
+
+            .contact {
+                font-size: 12px;
+            }
+
+            .container {
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>Bienvenue sur Boutique Alhaz!</h1>
+        <p>La meilleur classe boutique feminine: qualité et bon prix</p>
+        <p class="numero-et-addresse">66 64 70 05 <br> 66 75 66 75 <br> N'djamena, rue de 30m</p>
+        <a href="#product-list" class="cta-button">Cliquez pour voir</a>
+    </header>
+
+    <!-- products goes here -->
+    <div class="container">
+        <div class="filter">
+            <button onclick="filterProducts('tous')">Tous</button>
+            <button onclick="filterProducts('ibaya')">Ibaya</button>
+            <button onclick="filterProducts('robe')">Robe</button>
+            <!-- <button onclick="filterProducts('chaussures')">Chaussures</button> -->
+        </div>
+
+        <div class="product-list" id="product-list">
+            <!-- Product items will be added dynamically -->
+        </div>
+
+        <button class="btn-show-more" id="show" onclick="showMoreProducts()">Voir plus</button>
+    </div>
+
+    <section class="contact-info">
+        <div class="info-item">
+            <h3>Phone</h3>
+            <p>66 20 33 30</p>
+            <p>99 34 22 83</p>
+        </div>
+        <div class="info-item">
+            <h3>Address</h3>
+            <p>N'djamena, rue de 30m</p>
+        </div>
+        <div class="info-item">
+            <h3>Email</h3>
+            <p>alhazcenter@gmail.com</p>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <p>&copy; Alhaz. Tous les droits sont reservés</p>
+    </footer>
+
+    <script>
+
+        // javascript code for products
+        const products = [
+            { id: 1, category: 'robe', name: 'Running Shoes', price: '20000 fr', detailsLink: 'product1.html', imageUrl: 'robe1.jpg', description: "Marque: US, ram: 16, stokage: 128gb, couleur: noir, gris, blanc" },
+            { id: 2, category: 'ibaya', name: 'T-shirt', price: '3000 fr', detailsLink: 'product2', imageUrl: 'ibaya1.jpg', description: "Marque: US, ram: 16, stokage: 128gb, couleur: noir, gris, blanc" },
+            { id: 3, category: 'robe', name: 'Sunglasses', price: '14000 fr', detailsLink: 'product3', imageUrl: 'robe2.jpg', description: "Marque: US, ram: 16, stokage: 128gb, couleur: noir, gris, blanc" },
+            { id: 4, category: 'ibaya', name: 'Boots', price: '18000 fr', detailsLink: '#', imageUrl: 'ibaya2.jpg', description: "Marque: US, ram: 16, stokage: 128gb, couleur: noir, gris, blanc" },
+            { id: 5, category: 'robe', name: 'Jeans', price: '25000 fr', detailsLink: '#', imageUrl: 'robe3.jpg', description: "Marque: US, ram: 16, stokage: 128gb, couleur: noir, gris, blanc" },
+            { id: 6, category: 'ibaya', name: 'Reading Glasses', price: '$28000 fr', detailsLink: '#', imageUrl: 'ibaya3.jpg', description: "Marque: US, ram: 16, stokage: 128gb, couleur: noir, gris, blanc" },
+            { id: 7, category: 'robe', name: 'Casual Shoes', price: '32000 fr', detailsLink: '#', imageUrl: 'robe4.jpg', description: "Marque: US, ram: 16, stokage: 128gb, couleur: noir, gris, blanc" },
+            { id: 8, category: 'ibaya', name: 'Jacket', price: '80000 fr', detailsLink: '#', imageUrl: 'ibaya4.jpg', description: "Marque: US, ram: 16, stokage: 128gb, couleur: noir, gris, blanc" },
+            { id: 9, category: 'robe', name: 'Fashion Glasses', price: '14000 fr', detailsLink: '#', imageUrl: 'robe5.jpg', description: "Marque: US, ram: 16, stokage: 128gb, couleur: noir, gris, blanc" },
+            { id: 10, category: 'ibaya', name: 'Sports Shoes', price: '5000 fr', detailsLink: '#', imageUrl: 'ibaya5.jpg', description: "Marque: US, ram: 16, stokage: 128gb, couleur: noir, gris, blanc" },
+        ];
+
+        let currentPage = 1;
+        const productsPerPage = 5;
+        let currentCategory = 'tous';
+
+        function filterProducts(category) {
+            currentCategory = category;
+            currentPage = 1;
+            const filteredProducts = category === 'tous' ? products : products.filter(product => product.category === category);
+            renderProducts(filteredProducts.slice(0, productsPerPage));
+        }
+
+        function renderProducts(productSubset) {
+            const productList = document.getElementById('product-list');
+            productList.innerHTML = '';
+            productSubset.forEach(product => {
+                const productCard = `
+      <a href="${product.detailsLink}" class="product">
+        <img src="${product.imageUrl}" alt="${product.name}">
+        <div class="product-content">.
+          <h3>${product.name}</h3>
+          <p class="description"> ${product.description}</p>
+          <p class="price">${product.price}</p>
+        </div>
+      </a>
+    `;
+                productList.innerHTML += productCard;
+            });
+        }
+
+        function showMoreProducts() {
+            const filteredProducts = currentCategory === 'tous' ? products : products.filter(product => product.category === currentCategory);
+            const startIndex = currentPage * productsPerPage;
+            const nextPageProducts = filteredProducts.slice(startIndex, startIndex + productsPerPage);
+            renderProducts(filteredProducts.slice(0, startIndex + nextPageProducts.length));
+            currentPage++;
+            if(startIndex == products.length){
+                noMoreProducts();
+            }
+        }
+
+        function noMoreProducts(){
+            let button = document.getElementById('show');
+            button.innerHTML = 'Rendez-vous sur notre boutique pour plus!'
+        }
+
+        filterProducts('tous');
+    </script>
+
+</body>
+
+</html>
