@@ -13,13 +13,27 @@
             margin: 0;
             font-family: 'Poppins', sans-serif;
             background-color: #f9f9f9;
-            color: #333;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: #1E90FF;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo img {
+            height: 40px;
+            width: auto;
         }
 
         .header {
             /* background: linear-gradient(-90deg, #bbbbbb, #23ffdd); */
-            background-color: #6699ff;
-            color: white;
+            margin-top: 85px;
             padding: 20px 40px;
             text-align: center;
         }
@@ -42,7 +56,7 @@
             font-weight: 600;
             color: #333;
             background-color: #fff;
-            border: none;
+            border: 2px solid #1E90FF;
             border-radius: 25px;
             cursor: pointer;
             text-decoration: none;
@@ -93,7 +107,6 @@
 
             .header p {
                 font-size: 1.2rem;
-                color: #fff;
             }
 
             .header .numero-et-addresse {
@@ -287,9 +300,15 @@
 
 <body>
 
+    <nav class="navbar">
+        <div class="logo">
+            <img src="/logo.png" alt="Logo">
+        </div>
+    </nav>
+
     <header class="header">
         <h1>Bienvenue sur Boutique Alhaz!</h1>
-        <p>La meilleur classe boutique feminine: qualité et bon prix</p>
+        <p>La meilleur classe boutique feminin: qualité et bon prix</p>
         <p class="numero-et-addresse">66 64 70 05 <br> 66 75 66 75 <br> N'djamena, rue de 30m</p>
         <a href="#container" class="cta-button">Cliquez pour voir</a>
     </header>
