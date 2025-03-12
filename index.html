@@ -133,6 +133,12 @@
             }
         }
 
+        .feedback{
+            text-align: center;
+            padding: 0 70px;
+            color: #1E90FF
+        }
+
         /* styles for product */
         .container {
             max-width: 1200px;
@@ -142,21 +148,22 @@
 
         .filter {
             margin-bottom: 20px;
-            text-align: left;
+            text-align: center;
         }
 
-        .filter button.active {
+        /* .filter button.active {
             background: #0056b3;
-        }
+        } */
 
-        .filter button {
+        .container .filter button {
             padding: 10px 15px;
             margin: 5px;
             cursor: pointer;
             border: none;
-            border-bottom: 1.5px solid #1E90FF;
+            border-radius: 5px;
             color: black;
-            background-color: #f8f9fa;
+            background-color: #1E90FF;
+            color: white;
             font-size: 15px;
         }
 
@@ -320,6 +327,11 @@
         <p class="numero-et-addresse">66 64 70 05 <br> 66 75 66 75 <br> N'djamena, rue de 30m</p>
         <!-- <a href="#container" class="cta-button">Cliquez pour voir</a> -->
     </header>
+
+    <!-- feedback to hit those buttons -->
+    <p class="feedback">
+    Cliquez sur les bouttons ci-dessous si vous voulez voir par catégorie
+    </p>
 
     <!-- products goes here -->
     <div class="container" id="container">
