@@ -27,6 +27,7 @@
             padding: 10px 20px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
         .logo img {
             width: 100px;
             height: auto;
@@ -135,7 +136,7 @@
             }
         }
 
-        .feedback{
+        .feedback {
             text-align: center;
             padding: 0 70px;
             color: #222;
@@ -244,7 +245,7 @@
         .rendez-vous {
             text-align: center;
             padding: 20px;
-            color: #222;
+            color: #1E90FF;
         }
 
         /* Mobile responsive */
@@ -337,16 +338,16 @@
 
     <!-- feedback to hit those buttons -->
     <p class="feedback">
-    Cliquez sur les bouttons ci-dessous si vous voulez voir par catégorie
+        Cliquez sur les bouttons ci-dessous si vous voulez voir par catégorie
     </p>
 
     <!-- products goes here -->
     <div class="container" id="container">
         <div class="filter">
             <button onclick="filterProducts('tous')">Tous</button>
-            <button onclick="filterProducts('ibaya')">Ibaya</button>
-            <button onclick="filterProducts('robe')">Robe</button>
-            <!-- <button onclick="filterProducts('chaussures')">Chaussures</button> -->
+            <button onclick="filterProducts('cat1')">Getzner</button>
+            <button onclick="filterProducts('cat2')">Chaussure</button>
+            <button onclick="filterProducts('cat3')">Montre</button>
         </div>
 
         <div class="product-list" id="product-list">
@@ -385,25 +386,27 @@
 
         // javascript code for products
         const products = [
-    { id: 1, category: 'robe', name: 'Robe Model 1', price: '20000 fr', detailsLink: 'product1.html', imageUrl: 'robe1.jpg', description: "Quelques details à propos de ce produit", new: true },
-    { id: 2, category: 'ibaya', name: 'Ibaya Model 1', price: '3000 fr', detailsLink: 'product2', imageUrl: 'ibaya1.jpg', description: "Quelques details à propos de ce produit", new: false },
-    { id: 3, category: 'robe', name: 'Robe Model 2', price: '14000 fr', detailsLink: 'product3', imageUrl: 'robe2.jpg', description: "Quelques details à propos de ce produit", new: false },
-    { id: 4, category: 'ibaya', name: 'Ibaya Model 2', price: '18000 fr', detailsLink: '#', imageUrl: 'ibaya2.jpg', description: "Quelques details à propos de ce produit", new: true },
-    { id: 5, category: 'robe', name: 'Robe Model 3', price: '25000 fr', detailsLink: '#', imageUrl: 'robe3.jpg', description: "Quelques details à propos de ce produit", new: false },
-    { id: 6, category: 'ibaya', name: 'Ibaya Model 3', price: '28000 fr', detailsLink: '#', imageUrl: 'ibaya3.jpg', description: "Quelques details à propos de ce produit", new: true },
-    { id: 7, category: 'robe', name: 'Robe Model 4', price: '32000 fr', detailsLink: '#', imageUrl: 'robe4.jpg', description: "Quelques details à propos de ce produit", new: false },
-    { id: 8, category: 'ibaya', name: 'Ibaya Model 4', price: '80000 fr', detailsLink: '#', imageUrl: 'ibaya4.jpg', description: "Quelques details à propos de ce produit", new: true },
-    { id: 9, category: 'robe', name: 'Robe Model 5', price: '14000 fr', detailsLink: '#', imageUrl: 'robe5.jpg', description: "Quelques details à propos de ce produit", new: true },
-    { id: 10, category: 'ibaya', name: 'Ibaya Model 5', price: '5000 fr', detailsLink: '#', imageUrl: 'ibaya5.jpg', description: "Quelques details à propos de ce produit", new: false },
-    { id: 11, category: 'ibaya', name: 'Ibaya Model 4', price: '80000 fr', detailsLink: '#', imageUrl: 'ibaya4.jpg', description: "Quelques details à propos de ce produit", new: true },
-    { id: 12, category: 'robe', name: 'Robe Model 5', price: '14000 fr', detailsLink: '#', imageUrl: 'robe5.jpg', description: "Quelques details à propos de ce produit", new: true },
-    { id: 13, category: 'ibaya', name: 'Ibaya Model 5', price: '5000 fr', detailsLink: '#', imageUrl: 'ibaya5.jpg', description: "Quelques details à propos de ce produit", new: false}
-];
+            { id: 1, category: 'cat1', name: 'Getzner Model 1', price: '20000 fr', detailsLink: '#', imageUrl: 'images/getzner/getzner1.jpg', description: "Quelques details à propos de ce produit", new: true },
+            { id: 2, category: 'cat2', name: 'Chaussure Model 1', price: '3000 fr', detailsLink: '#', imageUrl: 'images/chaussure/chaussure1.jpg', description: "Quelques details à propos de ce produit", new: false },
+            { id: 3, category: 'cat3', name: 'Montre Model 1', price: '14000 fr', detailsLink: '#', imageUrl: 'images/montre/montre1.jpg', description: "Quelques details à propos de ce produit", new: false },
+            { id: 4, category: 'cat1', name: 'Getzner Model 2', price: '18000 fr', detailsLink: '#', imageUrl: 'images/getzner/getzner2.jpg', description: "Quelques details à propos de ce produit", new: true },
+            { id: 5, category: 'cat2', name: 'Chaussure Model 2', price: '25000 fr', detailsLink: '#', imageUrl: 'images/chaussure/chaussure2.jpg', description: "Quelques details à propos de ce produit", new: false },
+            { id: 6, category: 'cat3', name: 'Montre Model 2', price: '28000 fr', detailsLink: '#', imageUrl: 'images/montre/montre2.jpg', description: "Quelques details à propos de ce produit", new: true },
+            { id: 7, category: 'cat1', name: 'Getzner Model 3', price: '32000 fr', detailsLink: '#', imageUrl: 'images/getzner/getzner3.jpg', description: "Quelques details à propos de ce produit", new: false },
+            { id: 8, category: 'cat2', name: 'Chaussure Model 3', price: '80000 fr', detailsLink: '#', imageUrl: 'images/chaussure/chaussure3.jpg', description: "Quelques details à propos de ce produit", new: true },
+            { id: 9, category: 'cat3', name: 'Montre Model 3', price: '14000 fr', detailsLink: '#', imageUrl: 'images/montre/montre3.jpg', description: "Quelques details à propos de ce produit", new: true },
+            { id: 10, category: 'cat1', name: 'Getzner Model 4', price: '5000 fr', detailsLink: '#', imageUrl: 'images/getzner/getzner4.jpg', description: "Quelques details à propos de ce produit", new: false },
+            { id: 11, category: 'cat2', name: 'Chaussure Model 4', price: '80000 fr', detailsLink: '#', imageUrl: 'images/chaussure/chaussure4.jpg', description: "Quelques details à propos de ce produit", new: true },
+            { id: 12, category: 'cat3', name: 'Montre Model 4', price: '14000 fr', detailsLink: '#', imageUrl: 'images/montre/montre4.jpg', description: "Quelques details à propos de ce produit", new: true },
+            { id: 13, category: 'cat1', name: 'Getzner Model 5', price: '5000 fr', detailsLink: '#', imageUrl: 'images/getzner/getzner5.jpg', description: "Quelques details à propos de ce produit", new: false },
+            { id: 13, category: 'cat2', name: 'Chaussure Model 5', price: '5000 fr', detailsLink: '#', imageUrl: 'images/chaussure/chaussure5.jpg', description: "Quelques details à propos de ce produit", new: false },
+            { id: 13, category: 'cat3', name: 'Montre Model 5', price: '5000 fr', detailsLink: '#', imageUrl: 'images/montre/montre5.jpg', description: "Quelques details à propos de ce produit", new: false }
+        ];
 
         let currentPage = 1;
         const productsPerPage = 5;
         let currentCategory = 'tous';
-      
+
 
         function filterProducts(category) {
             currentCategory = category;
