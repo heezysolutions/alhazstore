@@ -18,7 +18,7 @@
         .navbar {
             position: fixed;
             top: 0;
-            z-index: 100;
+            z-index: 200;
             width: 100%;
             display: flex;
             justify-content: flex-start;
@@ -208,6 +208,11 @@
             color: white;
             background: red;
             padding: 5px;
+            border-radius: 5px;
+            position: relative;
+            top: 7%;
+            left: 83%;
+            z-index: 100;
         }
 
         .product-content {
@@ -246,7 +251,7 @@
         .rendez-vous {
             text-align: center;
             padding: 20px;
-            color: #1E90FF;
+            color: #28a745;
         }
 
         /* Mobile responsive */
@@ -369,7 +374,7 @@
             <p>99 34 22 83</p>
         </div>
         <div class="info-item">
-            <h3>Address</h3>
+            <h3>Adresse</h3>
             <p>N'djamena, rue de 30m</p>
         </div>
         <div class="info-item">
@@ -423,12 +428,13 @@
             const productList = document.getElementById('product-list');
             productList.innerHTML = '';
             productSubset.forEach(product => {
-                const newBadge = product.new ? `<span class="new-badge">Nouveau</span>` : "";
+                const newBadge = product.new ? `<span class="new-badge">New</span>` : "";
                 const productCard = `
       <a class="product">
+        ${newBadge}
         <img src="${product.imageUrl}" alt="${product.name}">
         <div class="product-content">
-            ${newBadge}
+           
           <h3>${product.name}</h3>
           <p class="price">${product.price}</p>
         </div>
